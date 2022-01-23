@@ -1,7 +1,8 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from django.views import View
 
 # Create your views here.
-def main_view(request):
-    if request.method == "GET":
+class MainView(View):
+    def get(self, request):
         return render(request, 'main_page.html')
